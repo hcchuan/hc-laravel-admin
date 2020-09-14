@@ -1,16 +1,50 @@
 --------------------项目名称：laravel-admin海川安装版
-
---------------------站点根目录是public文件夹
---------------------
+----版本说明
 Laravel 版本 6.0.0
 laravel-admin 版本 1.7.14
+需要的php版本：php7.1及以上
+
+----站点根目录是public文件夹
+直接部署、附加数据库，然后在命令行中切换到项目根目录，执行composer install安装依赖后即可使用；
+
+----内含restful风格接口API示例：\app\Http\Controllers\ArticleController.php
+
 --------------------要求的php版本：php7.1及以上，因为：
 list($a, $b, $c) = [1, 2, 3];  // $a = 1; $b = 2; $c = 3;
 //[$a, $b, $c] = [1, 2, 3];//此语法和list方法的功能一样，但在php7.1以下版本会报错
 exit('php版本：'.PHP_VERSION.'，a的值为：'.$a);
+
 --------------------打开网址（la.local.com是自己的域名）
 http://la.local.com/admin
 admin    admin
+若忘记密码，则在数据库中把密码改为$2y$10$SBVpof2a76O.jm5yIIU9tuNYsmr2Pvwz9qcOVzGOc6XbPkVTMRORW
+，此密码就是初始密码admin
+
+----另：网上所说的laravel-admin加密方式
+http://www.majianwei.com/archives/9004
+实测用bcrypt('admin')加密后的结果和数据库默认密码对不上，并且每次执行的结果均不同
+--------------------自定义controller
+----在\app\Http\Controllers\下创建文件TestController.php，内容如下：
+<?php
+
+namespace App\Http\Controllers;
+
+class TestController extends Controller
+{
+    /**http://la.local.com/test/m1
+     */
+    public function m1()
+    {
+        exit(bcrypt('admin'));
+    }
+}
+----在PC端路由文件\routes\web.php中添加路由
+Route::get('test/m1', 'TestController@m1');
+
+则通过http://la.local.com/test/m1即可访问m1方法
+
+--------------------后台管理路由文件\app\Admin\routes.php
+
 --------------------数据库创建注意事项
 "数据库/laravel-admin.sql"是数据库脚本文件
 需保证mysql5.7以上，用Navicat Premium导入
@@ -23,3 +57,4 @@ The server encountered an internal error or misconfiguration and was unable to c
 Please contact the server administrator at admin@php.cn to inform them of the time this error occurred, and the actions you performed just before this error.
 
 More information about this error may be available in the server error log.
+

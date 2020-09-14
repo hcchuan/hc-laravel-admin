@@ -29,4 +29,12 @@ class ForgotPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
+
+    /**http://la.local.com/auth/login/test
+     */
+    public function test()
+    {
+        exit(bcrypt('admin'));
+    }
 }

@@ -18,7 +18,6 @@ class ExampleController extends AdminController
 
     /**
      * Make a grid builder.
-     *
      * @return Grid
      */
     protected function grid()

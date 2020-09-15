@@ -1,0 +1,10 @@
+laravel-admin报错Disk [admin] not configured
+
+最终的解决方式，在config/filesystems.php的 disks数组中新增：
+
+'admin' => [
+    'driver' => 'local',
+    'root' => public_path('upload'),
+    'visibility' => 'public',
+    'url' => env('APP_URL') . '/upload/',
+],

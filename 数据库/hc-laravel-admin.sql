@@ -11,7 +11,7 @@
  Target Server Version : 80019
  File Encoding         : 65001
 
- Date: 14/09/2020 11:38:28
+ Date: 15/09/2020 15:37:50
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `admin_menu`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin_menu
@@ -60,7 +60,7 @@ CREATE TABLE `admin_operation_log`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 59 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -101,6 +101,29 @@ INSERT INTO `admin_operation_log` VALUES (33, 1, 'admin', 'GET', '127.0.0.1', '[
 INSERT INTO `admin_operation_log` VALUES (34, 1, 'admin', 'GET', '127.0.0.1', '[]', '2020-05-27 03:17:46', '2020-05-27 03:17:46');
 INSERT INTO `admin_operation_log` VALUES (35, 1, 'admin', 'GET', '127.0.0.1', '[]', '2020-09-14 02:45:09', '2020-09-14 02:45:09');
 INSERT INTO `admin_operation_log` VALUES (36, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 02:45:18', '2020-09-14 02:45:18');
+INSERT INTO `admin_operation_log` VALUES (37, 1, 'admin/auth/login', 'GET', '127.0.0.1', '[]', '2020-09-14 06:10:57', '2020-09-14 06:10:57');
+INSERT INTO `admin_operation_log` VALUES (38, 1, 'admin', 'GET', '127.0.0.1', '[]', '2020-09-14 06:10:58', '2020-09-14 06:10:58');
+INSERT INTO `admin_operation_log` VALUES (39, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:03', '2020-09-14 06:11:03');
+INSERT INTO `admin_operation_log` VALUES (40, 1, 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:04', '2020-09-14 06:11:04');
+INSERT INTO `admin_operation_log` VALUES (41, 1, 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:04', '2020-09-14 06:11:04');
+INSERT INTO `admin_operation_log` VALUES (42, 1, 'admin/auth/roles/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:11', '2020-09-14 06:11:11');
+INSERT INTO `admin_operation_log` VALUES (43, 1, 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:31', '2020-09-14 06:11:31');
+INSERT INTO `admin_operation_log` VALUES (44, 1, 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:32', '2020-09-14 06:11:32');
+INSERT INTO `admin_operation_log` VALUES (45, 1, 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:32', '2020-09-14 06:11:32');
+INSERT INTO `admin_operation_log` VALUES (46, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:33', '2020-09-14 06:11:33');
+INSERT INTO `admin_operation_log` VALUES (47, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:37', '2020-09-14 06:11:37');
+INSERT INTO `admin_operation_log` VALUES (48, 1, 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:46', '2020-09-14 06:11:46');
+INSERT INTO `admin_operation_log` VALUES (49, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:48', '2020-09-14 06:11:48');
+INSERT INTO `admin_operation_log` VALUES (50, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 06:11:49', '2020-09-14 06:11:49');
+INSERT INTO `admin_operation_log` VALUES (51, 1, 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 07:16:51', '2020-09-14 07:16:51');
+INSERT INTO `admin_operation_log` VALUES (52, 1, 'admin/auth/users', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 07:16:52', '2020-09-14 07:16:52');
+INSERT INTO `admin_operation_log` VALUES (53, 1, 'admin/auth/roles', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 07:16:52', '2020-09-14 07:16:52');
+INSERT INTO `admin_operation_log` VALUES (54, 1, 'admin/auth/users/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2020-09-14 07:16:58', '2020-09-14 07:16:58');
+INSERT INTO `admin_operation_log` VALUES (55, 1, 'admin/auth/users/create', 'GET', '127.0.0.1', '[]', '2020-09-14 07:31:58', '2020-09-14 07:31:58');
+INSERT INTO `admin_operation_log` VALUES (56, 1, 'admin/auth/users/create', 'GET', '127.0.0.1', '[]', '2020-09-14 07:32:01', '2020-09-14 07:32:01');
+INSERT INTO `admin_operation_log` VALUES (57, 1, 'admin/auth/users/create', 'GET', '127.0.0.1', '[]', '2020-09-14 07:32:03', '2020-09-14 07:32:03');
+INSERT INTO `admin_operation_log` VALUES (58, 1, 'admin/auth/users', 'POST', '127.0.0.1', '{\"username\":\"1\",\"name\":\"1\",\"password\":\"1\",\"password_confirmation\":\"1\",\"roles\":[null],\"permissions\":[null],\"_token\":\"QRjnPaCpisObTRcP8ud9AzSPM6ETaLa80oQDLqWl\"}', '2020-09-14 07:32:41', '2020-09-14 07:32:41');
+INSERT INTO `admin_operation_log` VALUES (59, 1, 'admin/auth/users', 'GET', '127.0.0.1', '[]', '2020-09-14 07:32:41', '2020-09-14 07:32:41');
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -117,7 +140,7 @@ CREATE TABLE `admin_permissions`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `admin_permissions_name_unique`(`name`) USING BTREE,
   UNIQUE INDEX `admin_permissions_slug_unique`(`slug`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin_permissions
@@ -192,7 +215,7 @@ CREATE TABLE `admin_roles`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `admin_roles_name_unique`(`name`) USING BTREE,
   UNIQUE INDEX `admin_roles_slug_unique`(`slug`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin_roles
@@ -232,6 +255,7 @@ CREATE TABLE `admin_users`  (
 -- Records of admin_users
 -- ----------------------------
 INSERT INTO `admin_users` VALUES (1, 'admin', '$2y$10$SBVpof2a76O.jm5yIIU9tuNYsmr2Pvwz9qcOVzGOc6XbPkVTMRORW', 'Administrator', NULL, '24QAgYoJpOuC4aBZg6UFOJnsVh70SL6pLeGaPr6qAmw3kyfGFo1TrOYTYOQ5', '2020-04-23 10:15:26', '2020-04-23 10:15:26');
+INSERT INTO `admin_users` VALUES (2, '1', '$2y$10$SYpve6zH1djIqvzVnLKXPODWat/8yW7aBUn0RrcnQlLS9MdjDIRMa', '1', 'images/220x165_0_2013082200534749738.jpg', NULL, '2020-09-14 07:32:41', '2020-09-14 07:32:41');
 
 -- ----------------------------
 -- Table structure for articles
@@ -247,7 +271,7 @@ CREATE TABLE `articles`  (
   PRIMARY KEY (`uid`) USING BTREE,
   UNIQUE INDEX `articles_username_unique`(`username`) USING BTREE,
   UNIQUE INDEX `articles_email_unique`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 59 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 58 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of articles
@@ -330,7 +354,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(0) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
